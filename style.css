@@ -1,0 +1,151 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+.nav-link:hover {
+  color: #08a29e;
+
+}
+.text-prim{
+  color:#08a29e;
+}
+.bg-prim{
+  background-color: #08a29e;
+}
+.btn-prim{
+  background-color: #08a29e;
+  color: white;
+}
+.btn-prim:hover{
+  background-color: #067a77;
+}
+.hero-section,
+.services-section,
+.about-section,
+.facility-section,
+.doctors-section,
+.appointment-section,
+.testimonials-section,
+.contact-section{
+  padding: 100px 0;
+}
+.hero-section h1 {
+  font-size: 2.5rem;
+}
+
+/* 444444444444444 */
+.grid {
+    display: grid;
+    /* Grid-এর কলাম সংখ্যা নির্ধারণ করবে। auto-fit এবং minmax() ব্যবহার করলে
+       স্ক্রিনের আকারের সাথে কলাম সংখ্যা নিজে থেকেই অ্যাডজাস্ট হয়ে যাবে। */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 15px; /* ছবিগুলোর মধ্যে ফাঁকা জায়গা */
+    grid-auto-rows: 150px; /* প্রতিটি row এর প্রাথমিক উচ্চতা */
+}
+
+.grid > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ছবির অনুপাত ঠিক রেখে কন্টেইনারে ফিট করবে */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.grid > img:hover {
+    transform: scale(1.05); /* হোভার করলে ছবি একটু বড় হবে */
+}
+
+/* এই অংশটিই Masonry লেআউট তৈরি করে।
+   ছবিগুলোর উচ্চতা অনুযায়ী সেগুলো বিভিন্ন row-তে ছড়িয়ে যাবে। */
+.grid > img:nth-child(2n+1) { /* odd (বিজোড়) নম্বরের ছবিগুলো */
+    grid-row: span 2; /* 2টি row জুড়ে থাকবে */
+}
+.grid > img:nth-child(3n) { /* 3 এর গুণিতক নম্বরের ছবিগুলো */
+    grid-row: span 3; /* 3টি row জুড়ে থাকবে */
+}
+.grid > img:nth-child(5n) { /* 5 এর গুণিতক নম্বরের ছবিগুলো */
+    grid-row: span 4; /* 4টি row জুড়ে থাকবে */
+}
+/* Input style */
+.custom-input {
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  transition: all 0.3s ease;
+}
+.custom-input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 8px rgba(13,110,253,0.3);
+  outline: none;
+}
+/* Button style */
+.custom-btn {
+  border-radius: 50px;
+  padding: 12px 40px;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+.custom-btn:hover {
+  background-color: #0b5ed7;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(13,110,253,0.3);
+}
+
+/* Form card effect */
+form {
+  background: #ffffffcc; /* subtle transparency */
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+/* 7777777777777777 */
+        /* Custom CSS for this section */
+        .testimonials-section {
+            background-color: #f8f9fa; /* Light gray background for contrast */
+        }
+        .testimonial-card {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px); 
+        }
+        .testimonial-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+        
+
+     .testimonial-icon{
+      background-color:#08a29e;  /* চাই ব্যাকগ্রাউন্ড */
+      color:#fff;                 /* আইকনের রং সাদা */
+     display:inline-flex;
+      align-items:center;
+     justify-content:center;
+    width:48px;                 /* সাইজ ইচ্ছামতো বদলাতে পারো */
+     height:48px;
+     border-radius:50%;          /* গোল বৃত্ত */
+      font-size:22px;             /* আইকনের নিজস্ব সাইজ */
+}
+
+@media (max-width:768px){
+  .hero-section,
+.services-section,
+.about-section,
+.facility-section,
+.doctors-section,
+.appointment-section,
+.testimonials-section,
+.contact-section{
+  padding: 50px 0;
+}
+
+}
